@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-from numpy import loadtxt
 import numpy as np
+from numpy import loadtxt
 
 
 # get dataset
@@ -22,7 +22,7 @@ blacklist = datafile[~datafile['MerchantSku'].isin(Skus)]
 print(blacklist)
 
 
-Blackcustomers = blacklist.BuyerEmailAddress.unique()
+Blackcustomers = blacklist.PlatformOrderId.unique()
 print(Blackcustomers)
 
 Goodorders = datafile[~datafile['BuyerEmailAddress'].isin(Blackcustomers)]
